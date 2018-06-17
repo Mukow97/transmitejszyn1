@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
             a0 = Convert.ToDouble(txta0.Text);
             if (a1 > 0 && a0 > 0 && a2 > 0 && a3 > 0)
             {
-                if((a1*a2-a3*a0)>0){
+                if((a1*a2*a3-a1*a1-a3*a3*a0)>0){
                     stabilnosc.Text =("Warunek konieczny i wystarczający został spełniony, układ jest stabilny.");
                 }
                 else
@@ -161,7 +161,7 @@ namespace WindowsFormsApp1
                         l = w1 * w1 + db0 * db0;
                         m = w2 * w2 + w3 * w3;
                         A = Math.Sqrt(l) / Math.Sqrt(m);
-                        fi = Math.Atan2(w1, db0) - Math.Atan2(w2, w3);
+                        fi = Math.Atan2(w1, db0) - Math.Atan2(w3, w2);
                         ASL.Add(w, A);
                         fiSL.Add(w, fi);
                         chart1.Series["A(w)"].Points.AddXY(w, ASL[w]);
